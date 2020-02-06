@@ -9,3 +9,4 @@ To get started:
 - Open the GitHub setup walkthrough: `teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md`
 
 Then follow the on-screen instructions to set up your repo.
+These are my changes to the Readme file
