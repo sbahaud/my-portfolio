@@ -4,6 +4,21 @@
   width: 650px;
 }
 
-#greeting-container {
-  margin-top: 20px;
+#movie-container {
+  margin-top: 30px;
+}
+
+#movie-name {
+  color: red;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+}
+
+#family-image {
+    width: 400px;
 }
