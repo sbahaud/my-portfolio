@@ -8,11 +8,19 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <h1>Shaheen's Portfolio</h1>
+      <div id="about-me">
+        <p>I am a SWE at Google working on Google Maps.</p>
+        <p>Outside of work, I like spending time with my family. Here is a picture of us at the Hearst castle:</p>
+        <img id="family-image" src = "images/family.jpg"></img>
+      </div>
+      <div id="movie-container">
+        <div>
+            Click here to see a recent movie I watched:
+            <button onclick="addRandomMovie()">Movie</button>
+        </div>
+        <div id="movie-name"></div>
+      </div>
     </div>
   </body>
 </html>
