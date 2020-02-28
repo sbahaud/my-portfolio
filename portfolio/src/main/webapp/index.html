@@ -9,18 +9,28 @@
   <body>
     <div id="content">
       <h1>Shaheen's Portfolio</h1>
+
       <div id="about-me">
-        <p>I am a SWE at Google working on Google Maps.</p>
+        <p>I am a SWE at Google, working on Google Maps.</p>
         <p>Outside of work, I like spending time with my family. Here is a picture of us at the Hearst castle:</p>
-        <img id="family-image" src = "images/family.jpg"></img>
+        <img class="images" src = "images/family.jpg"></img>
       </div>
+
+      <div id="comment-container">
+        <div class='section-header'>
+            Click here to see comments:
+            <button onclick="showComments()">Comments</button>
+        </div>
+        <div id="comments"></div>
+      </div>
+
       <div id="movie-container">
-        <div>
+        <div class='section-header'>
             Click here to see a recent movie I watched:
             <button onclick="addRandomMovie()">Movie</button>
         </div>
         <div id="movie-name"></div>
-      </div>
+      </div>         
     </div>
   </body>
 </html>

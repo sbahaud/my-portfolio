@@ -19,6 +19,31 @@
   flex-direction: column;
 }
 
-#family-image {
-    width: 400px;
+#comments {
+  background: lightyellow;
+  border-color: lightgray;
+  border-style: outset;
+  border-width: 2px;
+  padding: 10px;
+  width: 500px;
+}
+
+#comment-container {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.comment-text {
+  background-color: rgb(255, 255, 210);
+  margin: 10px;
+  padding: 10px;
+}
+
+.section-header {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.images {
+  width: 400px;
 }
