@@ -27,14 +27,19 @@ function addRandomMovie() {
 function showComments() {
   fetch('/data').then(response => response.json()).then((comments) => {
     const commentsElement = document.getElementById('comments');
+    // Only add the comments if it isn't already there.
     if (!commentsElement.hasChildNodes()) {
-      for (i = 0 ; i < comments.length; ++i) {
-        var divElement = document.createElement('div');
-        divElement.classList.add('comment-text');
-        divElement.innerText = comments[i];
-
-        commentsElement.appendChild(divElement);
+      for (i = 0; i < comments.length; ++i) {
+        commentsElement.appendChild(createDivElement(comments[i]));
       }
     }
   });
+}
+
+/** Creates a div element containing the given text. */
+function createDivElement(text) {
+  var divElement = document.createElement('div');
+  divElement.classList.add('comment-text');
+  divElement.innerText = text;
+  return divElement;
 }
