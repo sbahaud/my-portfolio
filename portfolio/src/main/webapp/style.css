@@ -19,6 +19,29 @@
   flex-direction: column;
 }
 
-#family-image {
+#comments {
+  background: lightyellow;
+  border-color: lightgray;
+  border-style: outset;
+  border-width: 2px;
+  padding: 10px;
+  width: 500px;
+}
+
+#comment-container {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.comment-text {
+    padding: 10px;
+}
+
+.section-header {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.images {
     width: 400px;
 }

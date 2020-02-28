@@ -12,17 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
+/** Adds a random greeting to the page. */
 function addRandomMovie() {
-  const movies =
-      ['Parasite', 'Foreigner', 'The Farewell', 'Downton Abbey', 'American factory'];
+  const movies = [
+    'Parasite', 'Foreigner', 'The Farewell', 'Downton Abbey', 'American factory'
+  ];
 
-  // Pick a random greeting.
   const movie = movies[Math.floor(Math.random() * movies.length)];
-
-  // Add it to the page.
   const movieName = document.getElementById('movie-name');
   movieName.innerText = movie;
+}
+
+/** Displays comments fetched from the server. */
+function showComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const commentsElement = document.getElementById('comments');
+    if (!commentsElement.hasChildNodes()) {
+      for (i = 0 ; i < comments.length; ++i) {
+        var divElement = document.createElement('div');
+        divElement.classList.add('comment-text');
+        divElement.innerText = comments[i];
+
+        commentsElement.appendChild(divElement);
+      }
+    }
+  });
 }
