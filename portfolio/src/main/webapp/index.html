@@ -16,18 +16,27 @@
         <img class="images" src = "images/family.jpg"></img>
       </div>
 
+      <div>
+        <form action="/data" method="POST">
+          <p>Enter a comment:</p>
+          <textarea name="text-input"></textarea>
+          <br/><br/>
+          <input type="submit" />
+        </form>
+      </div>
+
       <div id="comment-container">
         <div class='section-header'>
             Click here to see comments:
-            <button onclick="showComments()">Comments</button>
+          <button onclick="showComments()">Comments</button>
         </div>
         <div id="comments"></div>
       </div>
 
       <div id="movie-container">
         <div class='section-header'>
-            Click here to see a recent movie I watched:
-            <button onclick="addRandomMovie()">Movie</button>
+          Click here to see a recent movie I watched:
+          <button onclick="addRandomMovie()">Movie</button>
         </div>
         <div id="movie-name"></div>
       </div>         
