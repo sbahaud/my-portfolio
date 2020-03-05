@@ -17,7 +17,7 @@ function addRandomMovie() {
   fetch('/movies').then(response => response.json()).then((movie) => {
     const movieName = document.getElementById('movie-name');
     // URL is the attribute for "<a>"" tag href.
-    movieName.URL = movie.link;
+    movieName.href = movie.link;
     movieName.innerText = movie.name;
   });
 }
@@ -39,8 +39,8 @@ function addComment(containerElement, comment) {
   let element = containerElement.appendChild(
       createElement('div', 'comment-container', ''));
 
-  element.appendChild(createElement('span', 'comment-time', comment.timestamp));
-  element.appendChild(createElement('span', 'comment-text', comment.comment));
+  element.appendChild(createElement('div', 'comment-time', comment.timestamp));
+  element.appendChild(createElement('div', 'comment-text', comment.comment));
 }
 
 /** Creates a div element containing the given text. */
