@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package google.sps.comments;
+
+message Comments {
+  repeated Comment comments = 1;  
+}
+
+message Comment {
+  optional string name = 1;
+  optional string email = 2;
+  optional string text = 3;
+
+  // Sentiment of the comment.
+  enum Sentiment {
+    POSITIVE = 0;
+    NEUTRAL = 1;
+    NEGATIVE = 2;
+  }
+  optional Sentiment sentiment = 4;
+}
