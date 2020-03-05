@@ -24,19 +24,28 @@
   border-color: lightgray;
   border-style: outset;
   border-width: 2px;
-  padding: 10px;
+  height: 200px;
+  margin-top: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
   width: 500px;
 }
 
-#comment-container {
-  margin-top: 20px;
-  padding-top: 10px;
+.comment-input {
+  width: 500px;
+}
+
+.comment-container {
+  padding: 10px 0;
 }
 
 .comment-text {
-  background-color: rgb(255, 255, 210);
-  margin: 10px;
-  padding: 10px;
+  padding: 0 10px;
+}
+
+.comment-time {
+  color: darkgray;
+  padding-left: 10px;
 }
 
 .section-header {

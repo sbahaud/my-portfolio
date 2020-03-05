@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="showComments()">
     <div id="content">
       <h1>Shaheen's Portfolio</h1>
 
@@ -17,28 +17,22 @@
       </div>
 
       <div>
-        <form action="/data" method="POST">
+        <form id="commentForm" action="/data" method="POST">
           <p>Enter a comment:</p>
-          <textarea name="text-input"></textarea>
+          <textarea name="text-input" class="comment-input"></textarea>
           <br/><br/>
-          <input type="submit" />
+         <input type="submit"/> 
         </form>
       </div>
 
-      <div id="comment-container">
-        <div class='section-header'>
-            Click here to see comments:
-          <button onclick="showComments()">Comments</button>
-        </div>
-        <div id="comments"></div>
-      </div>
+      <div id="comments"></div>
 
       <div id="movie-container">
         <div class='section-header'>
           Click here to see a recent movie I watched:
           <button onclick="addRandomMovie()">Movie</button>
         </div>
-        <div id="movie-name"></div>
+        <a id = "movie-name" href="https://en.wikipedia.org/wiki/American_Factory"></a>
       </div>         
     </div>
   </body>

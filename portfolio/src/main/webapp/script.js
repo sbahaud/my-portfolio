@@ -14,32 +14,41 @@
 
 /** Adds a random greeting to the page. */
 function addRandomMovie() {
-  const movies = [
-    'Parasite', 'Foreigner', 'The Farewell', 'Downton Abbey', 'American factory'
-  ];
-
-  const movie = movies[Math.floor(Math.random() * movies.length)];
-  const movieName = document.getElementById('movie-name');
-  movieName.innerText = movie;
+  fetch('/movies').then(response => response.json()).then((movie) => {
+    const movieName = document.getElementById('movie-name');
+    // URL is the attribute for "<a>"" tag href.
+    movieName.URL = movie.link;
+    movieName.innerText = movie.name;
+  });
 }
 
 /** Displays comments fetched from the server. */
 function showComments() {
   fetch('/data').then(response => response.json()).then((comments) => {
-    const commentsElement = document.getElementById('comments');
-    // Only add the comments if it isn't already there.
-    if (!commentsElement.hasChildNodes()) {
-      for (i = 0; i < comments.length; ++i) {
-        commentsElement.appendChild(createDivElement(comments[i]));
-      }
+    console.log('showComments');
+    const containerElement = document.getElementById('comments');
+    for (i = 0; i < comments.length; ++i) {
+      addComment(containerElement, comments[i]);
     }
   });
 }
 
+/** Adds a comment block to the given container element. */
+function addComment(containerElement, comment) {
+  // Create a parent element for time & comment text
+  let element = containerElement.appendChild(
+      createElement('div', 'comment-container', ''));
+
+  element.appendChild(createElement('span', 'comment-time', comment.timestamp));
+  element.appendChild(createElement('span', 'comment-text', comment.comment));
+}
+
 /** Creates a div element containing the given text. */
-function createDivElement(text) {
-  var divElement = document.createElement('div');
-  divElement.classList.add('comment-text');
-  divElement.innerText = text;
-  return divElement;
+function createElement(elementType, className, text) {
+  let element = document.createElement(elementType);
+  element.classList.add(className);
+  if (text != '') {
+    element.innerText = text;
+  }
+  return element;
 }
